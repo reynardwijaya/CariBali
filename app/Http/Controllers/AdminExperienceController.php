@@ -34,6 +34,8 @@ class AdminExperienceController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'rating' => 'required|integer|between:1,5',
+            'category' => 'required|string|in:' . implode(',', array_keys(Experience::CATEGORIES)),
+            'location' => 'required|string|in:' . implode(',', array_keys(Experience::LOCATIONS)),
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'maps_link' => 'nullable|url'
         ]);
@@ -80,6 +82,8 @@ class AdminExperienceController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'rating' => 'required|integer|between:1,5',
+            'category' => 'required|string|in:' . implode(',', array_keys(Experience::CATEGORIES)),
+            'location' => 'required|string|in:' . implode(',', array_keys(Experience::LOCATIONS)),
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'maps_link' => 'nullable|url'
         ]);

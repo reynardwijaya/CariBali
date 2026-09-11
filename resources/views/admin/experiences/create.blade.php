@@ -206,11 +206,44 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="category">Category *</label>
+                        <select name="category"
+                                id="category"
+                                class="form-control @error('category') is-invalid @enderror"
+                                required>
+                            <option value="">Select Category</option>
+                            @foreach(\App\Models\Experience::CATEGORIES as $key => $cat)
+                                <option value="{{ $key }}" {{ old('category') == $key ? 'selected' : '' }}>{{ $cat['emoji'] }} {{ $cat['label'] }}</option>
+                            @endforeach
+                        </select>
+                        @error('category')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location Tag *</label>
+                        <select name="location"
+                                id="location"
+                                class="form-control @error('location') is-invalid @enderror"
+                                required>
+                            <option value="">Select Location</option>
+                            @foreach(\App\Models\Experience::LOCATIONS as $key => $label)
+                                <option value="{{ $key }}" {{ old('location') == $key ? 'selected' : '' }}>{{ $label }}</option>
+                            @endforeach
+                        </select>
+                        <small class="text-muted">Used to filter this place in the "Pick a location" search dropdown</small>
+                        @error('location')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
                         <label for="maps_link">Google Maps Link</label>
-                        <input type="url" 
-                               name="maps_link" 
+                        <input type="url"
+                               name="maps_link"
                                id="maps_link"
-                               class="form-control @error('maps_link') is-invalid @enderror" 
+                               class="form-control @error('maps_link') is-invalid @enderror"
                                value="{{ old('maps_link') }}"
                                placeholder="https://maps.google.com/...">
                         <small class="text-muted">Optional: Add Google Maps link for this location</small>
