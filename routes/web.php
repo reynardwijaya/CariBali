@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admincontroller;
-use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\AdminExperienceController;
 
 // ======================
@@ -16,9 +15,6 @@ Route::get('/', [Admincontroller::class, 'homepage'])->name('home');
 Route::get('/about', function () {
     return view('home.about');
 })->name('about');
-
-// Experience page (user)
-Route::get('/experience', [ExperienceController::class, 'index'])->name('experience.index');
 
 // Post details
 Route::get('/post_details/{id}', [Admincontroller::class, 'post_details'])->name('post.details');
