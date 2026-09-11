@@ -16,17 +16,16 @@
                         <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('experience*') ? 'active' : '' }}"
-                            href="{{ route('experience.index') }}">Favorite Places</a>
+                        <a class="nav-link scroll-link" href="{{ url('/#favorite') }}">Favorite Places</a>
                     </li>
                     <li class="nav-item">
-                    <a href="{{ url('/#about') }}" class="scroll-link">About</a>
+                    <a href="{{ url('/#whychooseus') }}" class="scroll-link">Why Choose Us?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll-link" href="#testimonial">Testimonial</a>
+                        <a class="nav-link scroll-link" href="{{ url('/#blog') }}">Testimonial</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll-link" href="#faq">FAQ</a>
+                        <a class="nav-link scroll-link" href="{{ url('/#faq') }}">FAQ</a>
                     </li>
 
                     @if (Route::has('login'))
@@ -39,7 +38,7 @@
                                 <a class="nav-link" href="{{ route('login') }}">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link signup-btn-mobile" href="{{ route('register') }}">Sign Up</a>
+                                <a class="nav-link signup-btn-mobile" href="{{ route('register') }}">Sign up</a>
                             </li>
                         @endauth
                     @endif
@@ -62,9 +61,8 @@
             <div class="navbar_center flex-1">
                 <ul class="nav_menu flex justify-center space-x-8">
                     <li><a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">Home</a></li>
-                    <li><a href="{{ route('experience.index') }}"
-                            class="{{ request()->is('experience*') ? 'active' : '' }}">Favorite Place</a></li>
-                    <li><a href="{{ url('/#about') }}" class="scroll-link">About</a></li>
+                    <li><a href="{{ url('/#favorite') }}" class="scroll-link">Favorite Places</a></li>
+                    <li><a href="{{ url('/#whychooseus') }}" class="scroll-link">Why Choose Us?</a></li>
                     <li><a href="{{ url('/#blog') }}" class="scroll-link">Testimonial</a></li>
                     <li><a href="{{ url('/#faq') }}" class="scroll-link">FAQ</a></li>
                 </ul>
@@ -78,7 +76,7 @@
                     @else
                         <a href="{{ route('login') }}" class="login-btn text-gray-800 hover:text-orange-500 transition">Login</a>
                         <a href="{{ route('register') }}"
-                            class="signup-btn bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition">Sign Up</a>
+                            class="signup-btn hover:bg-orange-600 transition">Sign up</a>
                     @endauth
                 @endif
             </div>

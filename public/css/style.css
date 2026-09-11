@@ -230,7 +230,6 @@ button {
 
 .unified_banner_section {
     width: 100%;
-    float: left;
     background-image: url(../images/Hero.png);
     background-size: cover;
     background-position: center top;
@@ -423,7 +422,9 @@ button {
 }
 
 .nav_menu li a.active {
-    color: #f97316;
+    color: #ffffff;
+    font-weight: 600;
+    padding-bottom: 8px;
     border-bottom: 2px solid #f97316;
 }
 
@@ -451,9 +452,9 @@ button {
     background-color: #f97316;
     color: #ffffff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
-    padding: 10px 20px;
+    padding: 10px 24px;
     border-radius: 8px;
     border: 2px solid #f97316;
     transition: all 0.3s ease;
@@ -504,11 +505,8 @@ button {
 
 .header_main {
     width: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 10px 0px 0px 0px;
+    background: transparent;
+    padding: 20px 0px 0px 0px;
     position: relative;
     z-index: 1000;
 }
@@ -583,34 +581,45 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 68vh;
+    min-height: 60vh;
     text-align: center;
 }
 
 .modern_banner_title {
     width: 100%;
-    font-size: 84px;
+    font-size: 58px;
     color: #ffffff;
     font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 25px;
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: -2px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: -1px;
     text-align: center;
 }
 
 .modern_banner_text {
     width: 100%;
-    font-size: 20px;
+    font-size: 16px;
     color: #ffffff;
-    margin-bottom: 35px;
-    line-height: 1.5;
+    margin-bottom: 32px;
+    line-height: 1.6;
     font-weight: 400;
     opacity: 0.95;
-    max-width: 1000px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    min-height: 52px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: opacity 0.4s ease;
+}
+
+.modern_banner_text.fade_out {
+    opacity: 0;
 }
 
 .modern_btn_container {
@@ -637,6 +646,181 @@ button {
     text-decoration: none;
 }
 
+/* Modern Search Bar (hero) */
+.modern_search_bar {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 9999px;
+    padding: 6px 6px 6px 8px;
+    max-width: 880px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+.search_field {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    padding: 6px 24px;
+}
+
+.search_field .search_icon {
+    color: #6b7280;
+    font-size: 17px;
+    flex-shrink: 0;
+}
+
+.dropdown_toggle {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dropdown_label {
+    display: block;
+    font-size: 15px;
+    color: #6b7280;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dropdown_label.has_value {
+    color: #1f2937;
+}
+
+.search_field .chevron_icon {
+    color: #6b7280;
+    font-size: 13px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.search_field.open .chevron_icon {
+    transform: rotate(180deg);
+}
+
+.dropdown_panel {
+    position: absolute;
+    top: calc(100% + 16px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    padding: 8px;
+    display: none;
+    flex-direction: column;
+    z-index: 20;
+    text-align: left;
+}
+
+.search_field.open .dropdown_panel {
+    display: flex;
+}
+
+.dropdown_option {
+    border: none;
+    background: transparent;
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 14px;
+    color: #374151;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown_option:hover {
+    background: #fff1e6;
+    color: #f97316;
+}
+
+.search_divider {
+    width: 1px;
+    height: 32px;
+    background: #d1d5db;
+    flex-shrink: 0;
+}
+
+.search_submit_btn {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    background: #f97316;
+    color: #ffffff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 17px;
+    font-family: inherit;
+    transition: background-color 0.3s ease;
+}
+
+.search_submit_btn:hover {
+    background-color: #ea580c;
+}
+
+.search_reset_btn {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    margin: 0 4px;
+    border-radius: 50%;
+    background: #f3f4f6;
+    color: #6b7280;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.search_reset_btn:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+@media (max-width: 767px) {
+    .modern_search_bar {
+        flex-wrap: wrap;
+        border-radius: 24px;
+        padding: 16px;
+        gap: 10px;
+    }
+    .search_field {
+        width: 100%;
+        padding: 8px 4px;
+    }
+    .search_divider {
+        display: none;
+    }
+    .search_submit_btn {
+        margin-left: auto;
+    }
+}
+
 
 /* banner section end */
 
@@ -645,7 +829,6 @@ button {
 
 .services_section {
     width: 100%;
-    float: left;
     padding-bottom: 50px;
     padding-top: 50px;
 }
