@@ -1,20 +1,44 @@
-<footer class="footer">
-          <div class="footer__block block no-margin-bottom">
-            <div class="container-fluid text-center">
-              <!-- Please do not remove the backlink to us unless you support us at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
-               <p class="no-margin-bottom"> © 2025 CariBali Developer Team. All Rights Reserved<a target="_blank" href="https://templateshub.net">Templates Hub</a>.</p>
-            </div>
-          </div>
-        </footer>
-      </div>
+<footer class="modern-admin-footer">
+    <div class="footer-inner">
+        <p class="footer-text">
+            © 2025 CariBali Developer. All Rights Reserved
+        </p>
     </div>
-    <!-- JavaScript files-->
-    <script src="{{ asset('Admincss/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('Admincss/vendor/popper.js/umd/popper.min.js') }}"> </script>
-    <script src="{{ asset('Admincss/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('Admincss/vendor/jquery.cookie/jquery.cookie.js') }}"> </script>
-    <script src="{{ asset('Admincss/vendor/chart.js/Chart.min.js') }}"></script>
-    <script src="{{ asset('Admincss/vendor/jquery-validation/jquery.validate.min.js') }}"></script>
-    <script src="{{ asset('Admincss/js/charts-home.js') }}"></script>
-    <script src="{{ asset('Admincss/js/front.js') }}"></script>
-    
+</footer>
+
+<style>
+.modern-admin-footer {
+    background: #ffffff;
+    border-top: 1px solid #f1f1f1;
+    padding: 18px 30px;
+}
+
+.footer-inner {
+    text-align: center;
+}
+
+.footer-text {
+    margin: 0;
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+.footer-text a {
+    color: #f97316;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
+</style>
+
+<!-- JavaScript files-->
+<script src="{{ asset('Admincss/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('Admincss/vendor/popper.js/umd/popper.min.js') }}"></script>
+<script src="{{ asset('Admincss/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('Admincss/vendor/jquery.cookie/jquery.cookie.js') }}"></script>
+<script src="{{ asset('Admincss/vendor/chart.js/Chart.min.js') }}"></script>
+<script src="{{ asset('Admincss/js/charts-home.js') }}"></script>
+<script src="{{ asset('Admincss/js/front.js') }}"></script>
