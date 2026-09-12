@@ -19,5 +19,7 @@ Route::get('/about', function () {
 // ======================
 // ADMIN
 // ======================
-Route::get('/admin', [AdminPostController::class, 'index'])->name('admin.home');
-Route::resource('/admin/posts', AdminPostController::class)->only(['store', 'update', 'destroy']);
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin', [AdminPostController::class, 'index'])->name('admin.home');
+    Route::resource('/admin/posts', AdminPostController::class)->only(['store', 'update', 'destroy']);
+});
