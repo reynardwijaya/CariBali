@@ -16,11 +16,11 @@
                 </button>
                 <i class="fa fa-chevron-down chevron_icon" aria-hidden="true"></i>
                 <div class="dropdown_panel" data-dropdown-panel>
-                    <button type="button" class="dropdown_option" data-value="ubud">Ubud</button>
-                    <button type="button" class="dropdown_option" data-value="kuta">Kuta</button>
-                    <button type="button" class="dropdown_option" data-value="seminyak">Seminyak</button>
-                    <button type="button" class="dropdown_option" data-value="uluwatu">Uluwatu</button>
-                    <button type="button" class="dropdown_option" data-value="canggu">Canggu</button>
+                    @forelse($locations ?? [] as $loc)
+                        <button type="button" class="dropdown_option" data-value="{{ $loc }}">{{ $loc }}</button>
+                    @empty
+                        <button type="button" class="dropdown_option" disabled>No locations yet</button>
+                    @endforelse
                 </div>
                 <input type="hidden" name="location" data-dropdown-input>
             </div>
@@ -33,7 +33,7 @@
                 </button>
                 <i class="fa fa-chevron-down chevron_icon" aria-hidden="true"></i>
                 <div class="dropdown_panel" data-dropdown-panel>
-                    @foreach (\App\Models\Experience::CATEGORIES as $key => $cat)
+                    @foreach (\App\Models\Post::CATEGORIES as $key => $cat)
                         <button type="button" class="dropdown_option" data-value="{{ $key }}">{{ $cat['emoji'] }} {{ $cat['label'] }}</button>
                     @endforeach
                 </div>

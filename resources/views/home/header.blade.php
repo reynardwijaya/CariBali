@@ -22,7 +22,7 @@
                     <a href="{{ url('/#whychooseus') }}" class="scroll-link">Why Choose Us?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll-link" href="{{ url('/#blog') }}">Testimonial</a>
+                        <a class="nav-link scroll-link" href="{{ url('/#testimonials') }}">Testimonial</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link scroll-link" href="{{ url('/#faq') }}">FAQ</a>
@@ -31,7 +31,13 @@
                     @if (Route::has('login'))
                         @auth
                             <li class="nav-item">
-                                <x-app-layout></x-app-layout>
+                                <span class="nav-link">Hi, {{ Auth::user()->name }}</span>
+                            </li>
+                            <li class="nav-item">
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="nav-link signup-btn-mobile" style="border:none;cursor:pointer;">Logout</button>
+                                </form>
                             </li>
                         @else
                             <li class="nav-item">
@@ -63,7 +69,7 @@
                     <li><a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">Home</a></li>
                     <li><a href="{{ url('/#favorite') }}" class="scroll-link">Favorite Places</a></li>
                     <li><a href="{{ url('/#whychooseus') }}" class="scroll-link">Why Choose Us?</a></li>
-                    <li><a href="{{ url('/#blog') }}" class="scroll-link">Testimonial</a></li>
+                    <li><a href="{{ url('/#testimonials') }}" class="scroll-link">Testimonial</a></li>
                     <li><a href="{{ url('/#faq') }}" class="scroll-link">FAQ</a></li>
                 </ul>
             </div>
@@ -72,7 +78,11 @@
             <div class="navbar_auth flex-shrink-0 space-x-4">
                 @if (Route::has('login'))
                     @auth
-                        <x-app-layout></x-app-layout>
+                        <span class="login-btn text-gray-800">Hi, {{ Auth::user()->name }}</span>
+                        <form method="POST" action="{{ route('logout') }}" class="inline">
+                            @csrf
+                            <button type="submit" class="signup-btn hover:bg-orange-600 transition" style="border:none;cursor:pointer;">Logout</button>
+                        </form>
                     @else
                         <a href="{{ route('login') }}" class="login-btn text-gray-800 hover:text-orange-500 transition">Login</a>
                         <a href="{{ route('register') }}"

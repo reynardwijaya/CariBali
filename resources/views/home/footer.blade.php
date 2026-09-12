@@ -11,7 +11,7 @@
       <a href="/" class="hover:text-orange-500 transition">Home</a>
       <a href="#favorite" class="hover:text-orange-500 transition">Favorite Places</a>
       <a href="#whychooseus" class="hover:text-orange-500 transition">Why Choose Us?</a>
-      <a href="#blog" class="hover:text-orange-500 transition">Testimonial</a>
+      <a href="#testimonials" class="hover:text-orange-500 transition">Testimonial</a>
       <a href="#faq" class="hover:text-orange-500 transition">FAQ</a>
     </nav>
 
@@ -36,7 +36,7 @@
     <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-center">
       <a href="#" class="hover:text-orange-500 transition">Terms of Use</a>
       <a href="#" class="hover:text-orange-500 transition">Privacy Policy</a>
-      <span>© {{ date('Y') }} CariBali Developer Team. All Rights Reserved</span>
+      <span>© 2025 CariBali Developer. All Rights Reserved</span>
     </div>
   </div>
 </footer>

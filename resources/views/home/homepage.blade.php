@@ -9,9 +9,9 @@
          @include('home.banner')
       </div>
 
-      @include('home.services')
+      @include('home.favorite_places')
       @include('home.about')
-      @include('home.blog')
+      @include('home.explore_testimonials')
       @include('home.faq')
       @include('home.footer')
 
@@ -23,6 +23,5 @@
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
       <script src="js/owl.carousel.js"></script>
-      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>    
    </body>
 </html>

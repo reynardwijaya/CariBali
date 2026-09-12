@@ -1,28 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admincontroller;
-use App\Http\Controllers\AdminExperienceController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminPostController;
 
 // ======================
-// USER PAGES
+// PUBLIC SITE
 // ======================
 
-// Home page (pakai custom homepage view)
-Route::get('/', [Admincontroller::class, 'homepage'])->name('home');
+// Landing page
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // About page (include dari home/about.blade.php)
 Route::get('/about', function () {
     return view('home.about');
 })->name('about');
 
-// Post details
-Route::get('/post_details/{id}', [Admincontroller::class, 'post_details'])->name('post.details');
-
 // ======================
-// ADMIN PAGES
+// ADMIN
 // ======================
-Route::get('/admin', [AdminExperienceController::class, 'create'])->name('admin.home');
-Route::get('/admin/add-post', [AdminExperienceController::class, 'create'])->name('admin.add-post');
-Route::get('/admin/manage-post', [AdminExperienceController::class, 'index'])->name('admin.manage-post');
-Route::resource('/admin/experiences', AdminExperienceController::class);
+Route::get('/admin', [AdminPostController::class, 'index'])->name('admin.home');
+Route::resource('/admin/posts', AdminPostController::class)->only(['store', 'update', 'destroy']);
