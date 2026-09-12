@@ -1,4 +1,5 @@
 {
+    "name": "caribali",
     "private": true,
     "type": "module",
     "scripts": {
