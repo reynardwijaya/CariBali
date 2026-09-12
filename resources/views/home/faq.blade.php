@@ -14,6 +14,15 @@
   border-color: #f97316;
   background-color: #fff7ed;
 }
+.faq-toggle {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.faq-toggle:focus,
+.faq-toggle:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
 </style>
 
 <!-- FAQ Section -->
